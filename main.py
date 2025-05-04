@@ -66,6 +66,25 @@ def main():
     )
     print(result)
 
+    result = (
+        df.with_columns(
+            (pl.col("birthdate").dt.year() // 10 * 10).alias("decade"),
+            pl.col("name").str.split(by=" ").list.first(),
+        )
+        .select(
+            pl.all().exclude("birthdate"),
+        )
+        .group_by(
+            pl.col("decade"),
+            maintain_order=True,
+        )
+        .agg(
+            pl.col("name"),
+            pl.col("weight", "height").mean().round(2).name.prefix("avg_"),
+        )
+    )
+    print(result)
+
 
 if __name__ == "__main__":
     main()
