@@ -18,7 +18,7 @@ def main():
   )
 
   python_polars_path = os.path.join(os.path.expanduser("~"), ".python-polars")
-  os.mkdir(python_polars_path)
+  os.makedirs(python_polars_path, exist_ok = True)
 
   df.write_csv(python_polars_path + "/df.csv")
   df_csv = pl.read_csv(python_polars_path + "/df.csv", try_parse_dates = True)
