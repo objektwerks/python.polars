@@ -104,6 +104,7 @@ def main():
     )
     print(f"*** join: {df.join(df2, on='name', how='left')}")
 
+    # concat
     df3 = pl.DataFrame(
         {
             "name": ["Ethan Edwards", "Fiona Foster", "Grace Gibson", "Henry Harris"],
