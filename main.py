@@ -56,12 +56,14 @@ def main():
     result = df.filter(pl.col("birthdate").dt.year() < 1990)
     print(f"*** filter: {result}")
 
+    # group_by
     result = df.group_by(
         (pl.col("birthdate").dt.year() // 10 * 10).alias("decade"),
         maintain_order=True,
     ).len()
     print(f"*** group_by: {result}")
 
+    # group_by
     result = df.group_by(
         (pl.col("birthdate").dt.year() // 10 * 10).alias("decade"),
         maintain_order=True,
