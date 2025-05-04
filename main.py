@@ -47,7 +47,7 @@ def main():
         birth_year=pl.col("birthdate").dt.year(),
         bmi=pl.col("weight") / (pl.col("height") ** 2),
     )
-    print(result)
+    print(f"*** with_columns: {result}")
 
     result = df.filter(pl.col("birthdate").dt.year() < 1990)
     print(result)
