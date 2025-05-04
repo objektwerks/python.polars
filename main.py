@@ -85,6 +85,15 @@ def main():
     )
     print(result)
 
+    df2 = pl.DataFrame(
+        {
+            "name": ["Ben Brown", "Daniel Donovan", "Alice Archer", "Chloe Cooper"],
+            "parent": [True, False, False, False],
+            "siblings": [1, 2, 3, 4],
+        }
+    )
+    print(df.join(df2, on="name", how="left"))
+
 
 if __name__ == "__main__":
     main()
