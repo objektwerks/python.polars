@@ -74,6 +74,7 @@ def main():
     )
     print(f"*** group_by: {result}")
 
+    # with_columns
     result = (
         df.with_columns(
             (pl.col("birthdate").dt.year() // 10 * 10).alias("decade"),
