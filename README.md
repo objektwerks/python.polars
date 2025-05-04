@@ -2,6 +2,10 @@ Python Polars
 -------------
 >Polars feature survey using Python 3.
 
+Install
+-------
+1. uv add polars
+
 Run
 ---
 1. uv run main.py
