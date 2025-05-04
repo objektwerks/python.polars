@@ -27,5 +27,12 @@ def main():
   df_csv = pl.read_csv(df_path, try_parse_dates = True)
   print(df_csv)
 
+  result = df.select(
+      pl.col("name"),
+      pl.col("birthdate").dt.year().alias("birth_year"),
+      (pl.col("weight") / (pl.col("height") ** 2)).alias("bmi"),
+  )
+  print(result)
+
 if __name__ == "__main__":
     main()

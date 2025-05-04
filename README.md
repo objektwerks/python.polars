@@ -5,6 +5,7 @@ Python Polars
 Install
 -------
 1. uv add polars
+2. uv add --dev ruff
 
 Run
 ---
