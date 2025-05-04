@@ -1,3 +1,3 @@
 Python Polars
 -------------
->Polars feature test using Python 3.
+>Polars feature survey using Python 3.
