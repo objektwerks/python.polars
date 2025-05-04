@@ -26,7 +26,7 @@ def main():
 
     df.write_csv(df_path)
     df_csv = pl.read_csv(df_path, try_parse_dates=True)
-    print(f"*** Dataframe write / read: {df_csv}")
+    print(f"*** write / read: {df_csv}")
 
     print(df_csv)
 
@@ -35,7 +35,7 @@ def main():
         pl.col("birthdate").dt.year().alias("birth_year"),
         (pl.col("weight") / (pl.col("height") ** 2)).alias("bmi"),
     )
-    print(result)
+    print(f"*** select: {result}")
 
     result = df.select(
         pl.col("name"),
