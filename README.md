@@ -7,9 +7,10 @@ Install
 1. uv add polars
 2. uv add --dev ruff
 
-Format
-------
+Ruff
+----
 1. uvx ruff format
+2. uvx ruff check
 
 Run
 ---
