@@ -85,7 +85,7 @@ def main():
             pl.col("weight", "height").mean().round(2).name.prefix("avg_"),
         )
     )
-    print(result)
+    print(f"*** with_columns: {result}")
 
     df2 = pl.DataFrame(
         {
