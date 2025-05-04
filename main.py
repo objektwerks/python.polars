@@ -52,6 +52,7 @@ def main():
     )
     print(f"*** with_columns: {result}")
 
+    # filter
     result = df.filter(pl.col("birthdate").dt.year() < 1990)
     print(f"*** filter: {result}")
 
