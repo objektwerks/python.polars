@@ -50,6 +50,12 @@ def main():
     result = df.filter(pl.col("birthdate").dt.year() < 1990)
     print(result)
 
+    result = df.group_by(
+        (pl.col("birthdate").dt.year() // 10 * 10).alias("decade"),
+        maintain_order=True,
+    ).len()
+    print(result)
+
 
 if __name__ == "__main__":
     main()
