@@ -59,14 +59,14 @@ def main():
     # group_by
     result = df.group_by(
         (pl.col("birthdate").dt.year() // 10 * 10).alias("decade"),
-        maintain_order=True,
+        maintain_order = True,
     ).len()
     print(f"*** group_by: {result}")
 
     # group_by
     result = df.group_by(
         (pl.col("birthdate").dt.year() // 10 * 10).alias("decade"),
-        maintain_order=True,
+        maintain_order = True,
     ).agg(
         pl.len().alias("sample_size"),
         pl.col("weight").mean().round(2).alias("avg_weight"),
