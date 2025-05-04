@@ -9,3 +9,4 @@ Run
 Resources
 ---------
 1. [uv](https://realpython.com/python-uv/)
+2. [Polars Docs](https://docs.pola.rs/)
