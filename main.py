@@ -27,7 +27,7 @@ def main():
 
     # write / read
     df.write_csv(df_path)
-    df_csv = pl.read_csv(df_path, try_parse_dates=True)
+    df_csv = pl.read_csv(df_path, try_parse_dates = True)
     print(f"*** write / read: {df_csv}")
 
     # select
