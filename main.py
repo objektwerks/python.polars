@@ -47,6 +47,9 @@ def main():
     )
     print(result)
 
+    result = df.filter(pl.col("birthdate").dt.year() < 1990)
+    print(result)
+
 
 if __name__ == "__main__":
     main()
