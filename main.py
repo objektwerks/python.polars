@@ -94,6 +94,7 @@ def main():
     )
     print(f"*** with_columns: {result}")
 
+    # join
     df2 = pl.DataFrame(
         {
             "name": ["Ben Brown", "Daniel Donovan", "Alice Archer", "Chloe Cooper"],
