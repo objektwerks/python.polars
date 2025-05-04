@@ -20,8 +20,9 @@ def main():
   python_polars_path = os.path.join(os.path.expanduser("~"), ".python-polars")
   os.makedirs(python_polars_path, exist_ok = True)
 
-  df.write_csv(python_polars_path + "/df.csv")
-  df_csv = pl.read_csv(python_polars_path + "/df.csv", try_parse_dates = True)
+  dfPath = python_polars_path + "/df.csv"
+  df.write_csv(dfPath)
+  df_csv = pl.read_csv(dfPath, try_parse_dates = True)
   print(df_csv)
 
 if __name__ == "__main__":
