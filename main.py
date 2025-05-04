@@ -41,6 +41,12 @@ def main():
     )
     print(result)
 
+    result = df.with_columns(
+        birth_year=pl.col("birthdate").dt.year(),
+        bmi=pl.col("weight") / (pl.col("height") ** 2),
+    )
+    print(result)
+
 
 if __name__ == "__main__":
     main()
