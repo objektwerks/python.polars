@@ -56,6 +56,16 @@ def main():
     ).len()
     print(result)
 
+    result = df.group_by(
+        (pl.col("birthdate").dt.year() // 10 * 10).alias("decade"),
+        maintain_order=True,
+    ).agg(
+        pl.len().alias("sample_size"),
+        pl.col("weight").mean().round(2).alias("avg_weight"),
+        pl.col("height").max().alias("tallest"),
+    )
+    print(result)
+
 
 if __name__ == "__main__":
     main()
