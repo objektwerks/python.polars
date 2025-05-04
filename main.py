@@ -109,7 +109,7 @@ def main():
             "height": [1.76, 1.6, 1.66, 1.8],  # (m)
         }
     )
-    print(pl.concat([df, df3], how="vertical"))
+    print(f"*** concat: {pl.concat([df, df3], how="vertical")}")
 
 
 if __name__ == "__main__":
