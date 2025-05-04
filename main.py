@@ -26,6 +26,8 @@ def main():
 
     df.write_csv(df_path)
     df_csv = pl.read_csv(df_path, try_parse_dates=True)
+    print(f"*** Dataframe write / read: {df_csv}")
+
     print(df_csv)
 
     result = df.select(
