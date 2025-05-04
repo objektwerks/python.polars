@@ -30,6 +30,7 @@ def main():
     df_csv = pl.read_csv(df_path, try_parse_dates=True)
     print(f"*** write / read: {df_csv}")
 
+    # select
     result = df.select(
         pl.col("name"),
         pl.col("birthdate").dt.year().alias("birth_year"),
@@ -37,6 +38,7 @@ def main():
     )
     print(f"*** select: {result}")
 
+    # select
     result = df.select(
         pl.col("name"),
         (pl.col("weight", "height") * 0.95).round(2).name.suffix("-5%"),
