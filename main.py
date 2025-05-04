@@ -1,6 +1,7 @@
 def main():
   import polars as pl
   import datetime as dt
+  import os
 
   df = pl.DataFrame(
       {
@@ -16,7 +17,12 @@ def main():
       }
   )
 
-  print(df)
+  python_polars_path = os.path.join(os.path.expanduser("~"), ".python-polars")
+  os.mkdir(python_polars_path)
+
+  df.write_csv(python_polars_path + "/df.csv")
+  df_csv = pl.read_csv(python_polars_path + "/df.csv", try_parse_dates = True)
+  print(df_csv)
 
 if __name__ == "__main__":
     main()
