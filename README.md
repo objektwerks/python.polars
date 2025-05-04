@@ -18,6 +18,6 @@ Run
 
 Resources
 ---------
+* [Polars](https://docs.pola.rs/)
 * [uv](https://realpython.com/python-uv/)
 * [ruff](https://docs.astral.sh/ruff/)
-* [Polars Docs](https://docs.pola.rs/)
