@@ -66,7 +66,7 @@ def main():
         pl.col("weight").mean().round(2).alias("avg_weight"),
         pl.col("height").max().alias("tallest"),
     )
-    print(result)
+    print(f"*** group_by: {result}")
 
     result = (
         df.with_columns(
