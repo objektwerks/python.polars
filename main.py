@@ -35,6 +35,12 @@ def main():
     )
     print(result)
 
+    result = df.select(
+        pl.col("name"),
+        (pl.col("weight", "height") * 0.95).round(2).name.suffix("-5%"),
+    )
+    print(result)
+
 
 if __name__ == "__main__":
     main()
