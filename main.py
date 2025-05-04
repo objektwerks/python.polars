@@ -1,3 +1,5 @@
+# See: https://docs.pola.rs/user-guide/getting-started/
+
 def main():
   import polars as pl
   import datetime as dt
