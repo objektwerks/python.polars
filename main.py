@@ -94,7 +94,7 @@ def main():
             "siblings": [1, 2, 3, 4],
         }
     )
-    print(df.join(df2, on="name", how="left"))
+    print(f"*** join: {df.join(df2, on="name", how="left")}")
 
     df3 = pl.DataFrame(
         {
