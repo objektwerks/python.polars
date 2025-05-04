@@ -4,10 +4,11 @@ import polars as pl
 import datetime as dt
 import os
 
+
 def main():
     # paths
     python_polars_path = os.path.join(os.path.expanduser("~"), ".python-polars")
-    os.makedirs(python_polars_path, exist_ok = True)
+    os.makedirs(python_polars_path, exist_ok=True)
     df_path = python_polars_path + "/df.csv"
 
     # dataframe
@@ -27,7 +28,7 @@ def main():
 
     # write / read
     df.write_csv(df_path)
-    df_csv = pl.read_csv(df_path, try_parse_dates = True)
+    df_csv = pl.read_csv(df_path, try_parse_dates=True)
     print(f"*** write / read: {df_csv}")
 
     # select
@@ -59,14 +60,14 @@ def main():
     # group_by
     result = df.group_by(
         (pl.col("birthdate").dt.year() // 10 * 10).alias("decade"),
-        maintain_order = True,
+        maintain_order=True,
     ).len()
     print(f"*** group_by: {result}")
 
     # group_by
     result = df.group_by(
         (pl.col("birthdate").dt.year() // 10 * 10).alias("decade"),
-        maintain_order = True,
+        maintain_order=True,
     ).agg(
         pl.len().alias("sample_size"),
         pl.col("weight").mean().round(2).alias("avg_weight"),
@@ -85,7 +86,7 @@ def main():
         )
         .group_by(
             pl.col("decade"),
-            maintain_order = True,
+            maintain_order=True,
         )
         .agg(
             pl.col("name"),
