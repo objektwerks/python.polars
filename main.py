@@ -56,7 +56,7 @@ def main():
         (pl.col("birthdate").dt.year() // 10 * 10).alias("decade"),
         maintain_order=True,
     ).len()
-    print(result)
+    print(f"*** group_by: {result}")
 
     result = df.group_by(
         (pl.col("birthdate").dt.year() // 10 * 10).alias("decade"),
