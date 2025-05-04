@@ -45,6 +45,7 @@ def main():
     )
     print(f"*** select: {result}")
 
+    # with_columns
     result = df.with_columns(
         birth_year=pl.col("birthdate").dt.year(),
         bmi=pl.col("weight") / (pl.col("height") ** 2),
