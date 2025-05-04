@@ -7,6 +7,10 @@ Install
 1. uv add polars
 2. uv add --dev ruff
 
+Format
+------
+1. uvx ruff format
+
 Run
 ---
 1. uv run main.py
