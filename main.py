@@ -7,7 +7,7 @@ import os
 def main():
     # paths
     python_polars_path = os.path.join(os.path.expanduser("~"), ".python-polars")
-    os.makedirs(python_polars_path, exist_ok=True)
+    os.makedirs(python_polars_path, exist_ok = True)
     df_path = python_polars_path + "/df.csv"
 
     # dataframe
