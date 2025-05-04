@@ -41,7 +41,7 @@ def main():
         pl.col("name"),
         (pl.col("weight", "height") * 0.95).round(2).name.suffix("-5%"),
     )
-    print(result)
+    print(f"*** select: {result}")
 
     result = df.with_columns(
         birth_year=pl.col("birthdate").dt.year(),
