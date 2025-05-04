@@ -5,10 +5,12 @@ import datetime as dt
 import os
 
 def main():
+    # paths
     python_polars_path = os.path.join(os.path.expanduser("~"), ".python-polars")
     os.makedirs(python_polars_path, exist_ok=True)
     df_path = python_polars_path + "/df.csv"
 
+    # dataframe
     df = pl.DataFrame(
         {
             "name": ["Alice Archer", "Ben Brown", "Chloe Cooper", "Daniel Donovan"],
@@ -23,6 +25,7 @@ def main():
         }
     )
 
+    # write / read
     df.write_csv(df_path)
     df_csv = pl.read_csv(df_path, try_parse_dates=True)
     print(f"*** write / read: {df_csv}")
