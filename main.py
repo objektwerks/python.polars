@@ -5,6 +5,7 @@ def main():
 
   python_polars_path = os.path.join(os.path.expanduser("~"), ".python-polars")
   os.makedirs(python_polars_path, exist_ok = True)
+  df_path = python_polars_path + "/df.csv"
 
   df = pl.DataFrame(
       {
@@ -20,7 +21,6 @@ def main():
       }
   )
 
-  df_path = python_polars_path + "/df.csv"
   df.write_csv(df_path)
   df_csv = pl.read_csv(df_path, try_parse_dates = True)
   print(df_csv)
