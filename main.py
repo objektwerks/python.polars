@@ -3,6 +3,9 @@ def main():
   import datetime as dt
   import os
 
+  python_polars_path = os.path.join(os.path.expanduser("~"), ".python-polars")
+  os.makedirs(python_polars_path, exist_ok = True)
+
   df = pl.DataFrame(
       {
           "name": ["Alice Archer", "Ben Brown", "Chloe Cooper", "Daniel Donovan"],
@@ -16,9 +19,6 @@ def main():
           "height": [1.56, 1.77, 1.65, 1.75],  # (m)
       }
   )
-
-  python_polars_path = os.path.join(os.path.expanduser("~"), ".python-polars")
-  os.makedirs(python_polars_path, exist_ok = True)
 
   df_path = python_polars_path + "/df.csv"
   df.write_csv(df_path)
