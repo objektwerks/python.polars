@@ -85,7 +85,7 @@ def main():
         )
         .group_by(
             pl.col("decade"),
-            maintain_order=True,
+            maintain_order = True,
         )
         .agg(
             pl.col("name"),
